@@ -4,7 +4,6 @@ aws ssm get-parameters-by-path --path /Test-LAMBDA --region us-west-2 | jq -r '.
 mkdir -p /tmp/lamda/Test
 echo Copying Files from Project to Temp Folder
 rsync -a  Test/ /tmp/lamda/Test/
-mv /tmp/lamda/Test/Test.py /tmp/lamda/Test/lambda_function.py
 cp .env /tmp/lamda/Test/.env
 cd /tmp/lamda/Test/ && zip -rq ../Test.zip .
 aws s3 cp /tmp/lamda/Test.zip s3://python-test-170278925856/lambda_functions/Test-Lambda/Test.zip
