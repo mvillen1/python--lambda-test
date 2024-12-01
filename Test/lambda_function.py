@@ -1,7 +1,7 @@
 import json
 import boto3
 import base64
-import datetime
+from datetime import datetime
 
 def lambda_handler(event, context):
     display_welcome_message()
