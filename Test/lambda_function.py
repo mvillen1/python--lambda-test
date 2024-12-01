@@ -16,7 +16,7 @@ def uploadFileToS3(event):
     get_file_content = event["content"]
     decode_content = base64.b64decode(get_file_content)
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    S3.put_object(Bucket="python-test-170278925856/input",Key="data" + str(timestamp)+ ".csv",Body=decode_content)
+    S3.put_object(Bucket="python-test-170278925856",Key="/input/data" + str(timestamp)+ ".csv",Body=decode_content)
 
 # Welcome message
 def display_welcome_message():
